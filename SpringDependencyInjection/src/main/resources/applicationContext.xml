@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="petrol"
+          class="Model.PetrolEngine" />
+        <!-- additional collaborators and configuration for this bean go here -->
+
+    <bean id="diesel"
+          class="Model.DieselEngine" />
+        <!-- additional collaborators and configuration for this bean go here -->
+
+    <bean id="nexon" class="Model.NexonCar">
+        <!-- we are providing same number of argument, here we are making nexon a petrol engine car -->
+        <constructor-arg ref="petrol"></constructor-arg>
+    </bean>
+    <bean id="thar" class="Model.Thar">
+        <constructor-arg ref="diesel"></constructor-arg>
+    </bean>
+    <!-- more bean definitions for data access objects go here -->
+</beans>
